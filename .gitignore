@@ -23,3 +23,6 @@ GradApp/
 # private Claude context and tutor skill
 CLAUDE.local.md
 .claude/skills/tutor/
+
+# editor workspace
+.obsidian/
