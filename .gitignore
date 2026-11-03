@@ -1,0 +1,25 @@
+# raw media and large artifacts stay out of git
+data/
+*.yuv
+*.y4m
+*.hevc
+*.mp4
+*.pt
+*.pth
+roi*.bin
+results/raw/
+
+__pycache__/
+*.egg-info/
+.venv/
+.pytest_cache/
+.DS_Store
+
+# private study notes
+docs/learning-log.md
+
+# private application workspace (plan, claims, checklist)
+GradApp/
+# private Claude context and tutor skill
+CLAUDE.local.md
+.claude/skills/tutor/

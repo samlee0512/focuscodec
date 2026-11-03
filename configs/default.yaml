@@ -1,0 +1,9 @@
+# Experiment grid (W3). Clips refer to files in data/videos/.
+clips: [FourPeople_1280x720_60.y4m, akiyo_cif.y4m]
+frames: 300
+qps: [27, 32, 37, 42]
+roi_strengths: [2, 4, 6, 8]   # d: ΔQP = -d inside, +d outside
+dilation_blocks: 1
+smoothing: {alpha: 0.6, on: 0.5, off: 0.3}
+segmenter: deeplabv3_mobilenet_v3_large
+preset: medium
