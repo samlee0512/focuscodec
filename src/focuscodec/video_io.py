@@ -30,7 +30,9 @@ def kvazaar_encode(src: Path, out: Path, width: int, height: int, qp: int, fps: 
                    roi: Path | None = None, preset: str = "medium", frames: int | None = None) -> int:
     """Encode raw yuv420p with constant QP; returns the bitstream size in bytes."""
     cmd = ["kvazaar", "-i", str(src), "--input-res", f"{width}x{height}", "--input-fps", str(fps),
-           "--qp", str(qp), "--preset", preset, "-o", str(out)]
+           "--qp", str(qp), "--preset", preset, "-o", str(out),
+           # low-delay GOP: Kvazaar reads --roi maps in coding order, so frames must not be reordered
+           "--gop", "lp-g4d3t1"]
     if frames:
         cmd += ["-n", str(frames)]
     if roi:
