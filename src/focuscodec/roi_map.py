@@ -3,6 +3,8 @@
 Kvazaar binary ROI format (one block per frame, repeated):
     int32 width, int32 height, then width*height int8 delta-QP values in raster order.
 Negative delta-QP = finer quantization = higher quality.
+Kvazaar consumes one map per frame in *coding* order, so encode with a low-delay GOP
+(see video_io.kvazaar_encode) to keep map i on display frame i.
 """
 from __future__ import annotations
 
